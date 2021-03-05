@@ -1,6 +1,7 @@
 package com.android.shuyong.util;
 
 import android.app.Activity;
+import android.content.Context;
 import android.util.Log;
 
 import java.util.Stack;
@@ -103,5 +104,7 @@ public class ActivityStackManager {
             popActivity(getFirstActivity());
         }
     }
+
+    public void startNextActivity(Context context,)
 
 }
