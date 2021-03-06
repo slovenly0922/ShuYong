@@ -1,10 +1,12 @@
 package com.android.shuyong.activity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 
 import com.android.shuyong.R;
+import com.android.shuyong.util.ActivityStackManager;
 import com.android.shuyong.util.SharedPreferencesUtil;
 
 public class SplashActivity extends BaseActivity {
@@ -15,11 +17,14 @@ public class SplashActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         Log.i(TAG, "SplashActivity onCreate: ");
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
 
         //判断该Activity是不是第一次启动
         isFirstOpen= SharedPreferencesUtil.getBoolean(this,SharedPreferencesUtil.FIRST_OPEN,false);
-        if (isFirstOpen)
+        if (!isFirstOpen){
+            skipAnotherActivity(this,HomeActivity.class);
+            return;
+        }
+        setContentView(R.layout.activity_splash);
 
     }
 

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.android.shuyong.R;
+import com.android.shuyong.util.ActivityStackManager;
 
 public class HomeActivity extends BaseActivity {
     private static final String TAG = "HomeActivity";
@@ -12,8 +13,10 @@ public class HomeActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Log.i(TAG, "HomeActivity onCreate: ");
     }
+
 
     @Override
     protected void initView() {

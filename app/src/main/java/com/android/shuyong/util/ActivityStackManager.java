@@ -2,6 +2,7 @@ package com.android.shuyong.util;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 
 import java.util.Stack;
@@ -105,6 +106,5 @@ public class ActivityStackManager {
         }
     }
 
-    public void startNextActivity(Context context,)
 
 }
