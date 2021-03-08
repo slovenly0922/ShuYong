@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dots_to_parent_bottom">30dp</dimen>
+    <dimen name="dots_to_dots">10dp</dimen>
+    <dimen name="button_width">160dp</dimen>
+    <dimen name="button_height">64dp</dimen>
+    <dimen name="button_to_parent_bottom">60dp</dimen>
+    <dimen name="button_line_width">1dp</dimen>
+    <dimen name="enter_button_radius">200dp</dimen>
+    <dimen name="enter_font_size">24sp</dimen>
+</resources>

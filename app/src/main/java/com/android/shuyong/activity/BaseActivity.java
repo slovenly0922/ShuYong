@@ -41,15 +41,15 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.i(TAG, " BaseActivity onCreate: ");
-        initView();
-        initData();
-        setEvent();
         mContext = this;
         ActivityStackManager.getActivityStackManager().pushActivity(this);
         screenManager = ScreenManager.getInstance();
         screenManager.setScreenRotate(isScreenRotate, this);
         screenManager.setFullScreen(isFullScreen, this);
         screenManager.setStatusBar(isStatusBarTranslucent, this);
+        initView();
+        initData();
+        setEvent();
     }
 
     @Override
