@@ -1,19 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.BaseActivity"
+    tools:context=".activity.HomeActivity"
     >
-
-    <TextView
+    <ImageView
+        android:id="@+id/carousel_pictures"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/carousel_pictures_height"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/splash1"/>
+    <ImageView
+        android:layout_width="@dimen/search_icon_width"
+        android:layout_height="@dimen/search_icon_height"
+        android:src="@mipmap/search_icon"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="@dimen/search_icon_margin_right"
+        android:layout_marginTop="@dimen/search_icon_margin_top"/>
+    <com.android.shuyong.view.CarouselPicturesView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:default_size="10dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/carousel_pictures"
+
+
+        />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

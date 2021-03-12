@@ -37,6 +37,7 @@ public class SplashActivity extends BaseActivity implements View.OnClickListener
     private ImageView[] dots;
     //用于记录当前选中的位置
     private int currentIndex;
+    private static Animation mAnimation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,12 +62,14 @@ public class SplashActivity extends BaseActivity implements View.OnClickListener
             if (i == pics.length - 1) {
                 startBtn = (Button) view.findViewById(R.id.start_btn);
                 startBtn.setTag("enter");
-//                startBtn.startAnimation();
+
+                //先放大后缩小该按钮
+                mAnimation=AnimationUtils.loadAnimation(SplashActivity.this,R.anim.from_big_to_small);
+                startBtn.startAnimation(mAnimation);
             }
             views.add(view);
         }
         viewPager = (ViewPager) findViewById(R.id.vp_guide);
-        Animation animation=new ScaleAnimation()
         initDots();
 
     }
