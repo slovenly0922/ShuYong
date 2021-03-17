@@ -2,9 +2,14 @@ package com.android.shuyong.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.OvalShape;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
@@ -13,6 +18,8 @@ import com.android.shuyong.R;
 
 public class CarouselPicturesView extends View {
     private int defaultSize;
+    private int int_src;
+    private Bitmap bitmap_src;
 
     public CarouselPicturesView(Context context) {
         super(context);
@@ -20,10 +27,11 @@ public class CarouselPicturesView extends View {
 
     public CarouselPicturesView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        TypedArray a = context.obtainStyledAttributes(attributeSet, R.styleable.CarouselPicturesView);
-        defaultSize = a.getDimensionPixelSize(R.styleable.CarouselPicturesView_default_size, 100);
+        TypedArray typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.CarouselPicturesView);
+        defaultSize = typedArray.getDimensionPixelSize(R.styleable.CarouselPicturesView_default_size, 100);
+        int_src=typedArray.getResourceId(R.styleable.CarouselPicturesView_image_src,0);
         Log.d("lqq", "defaultSize=" + defaultSize);
-        a.recycle();
+        typedArray.recycle();
     }
 
     @Override

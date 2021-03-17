@@ -2,5 +2,9 @@
 <resources>
     <declare-styleable name="CarouselPicturesView">
         <attr name="default_size" format="dimension"/>
+        <attr name="image_src" format="reference"/>
+    </declare-styleable>
+    <declare-styleable name="CarouselPicturesView2">
+        <attr name="image_src2" format="reference"/>
     </declare-styleable>
 </resources>
