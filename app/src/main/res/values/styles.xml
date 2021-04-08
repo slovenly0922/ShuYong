@@ -7,4 +7,8 @@
     <declare-styleable name="CarouselPicturesView2">
         <attr name="image_src2" format="reference"/>
     </declare-styleable>
+    <declare-styleable name="MaskImage">
+        <attr name="image" format="reference"/>
+        <attr name="mask" format="reference"/>
+    </declare-styleable>
 </resources>

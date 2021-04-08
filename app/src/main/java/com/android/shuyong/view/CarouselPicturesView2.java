@@ -10,6 +10,7 @@ import android.graphics.Paint;
 import android.graphics.Shader;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.OvalShape;
+import android.graphics.drawable.shapes.RectShape;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
@@ -34,11 +35,10 @@ public class CarouselPicturesView2 extends View {
         TypedArray typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.CarouselPicturesView2);
         image_src_int = typedArray.getResourceId(R.styleable.CarouselPicturesView2_image_src2, 0);
 
-        srcBitmap = BitmapFactory.decodeResource(context.getResources(), image_src_int);
+        srcBitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.splash3);
         srcBitmapWidth = srcBitmap.getWidth() / 2;
         srcBitmapHeight = srcBitmap.getHeight() / 2;
         bitmapShader = new BitmapShader(srcBitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
-
         typedArray.recycle();
     }
 
@@ -52,10 +52,11 @@ public class CarouselPicturesView2 extends View {
         paint.setShader(bitmapShader);
 
         //设置显示区域
-        shapeDrawable.setBounds(-getWidth()/4, -getHeight()/4, getWidth() / 2, getHeight() / 2);
+        shapeDrawable.setBounds(-getWidth()/2, -getHeight()/2, getWidth() +getWidth()/2, getHeight()/3);
+//        shapeDrawable.setBounds(0, 0, getWidth(), getHeight());
         //绘制shapeDrawable
         shapeDrawable.draw(canvas);
-
+        Log.d("lqq","getWidth="+getWidth()+"getHeight="+getHeight());
     }
 
 
